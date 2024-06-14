@@ -1,5 +1,5 @@
 export const CATEGORIES = {
-  Intelligence: [
+  INTELLIGENCE: [
     { id: 1, leftTrait: "unitelligent", rightTrait: "smart" },
     { id: 2, leftTrait: "ignorant", rightTrait: "learned" },
     { id: 3, leftTrait: "helpless", rightTrait: "street-smart" },
@@ -7,14 +7,14 @@ export const CATEGORIES = {
     { id: 5, leftTrait: "forgetfull", rightTrait: "remembering" },
     { id: 6, leftTrait: "irrational", rightTrait: "logical" },
   ],
-  "Physical Qualities": [
+  PHYSICAL_QUALITIES: [
     { id: 7, leftTrait: "ugly", rightTrait: "attractive" },
     { id: 8, leftTrait: "weak", rightTrait: "strong" },
     { id: 9, leftTrait: "slow", rightTrait: "fast" },
     { id: 10, leftTrait: "clumsy", rightTrait: "agile" },
     { id: 11, leftTrait: "unfit", rightTrait: "enduring" },
   ],
-  Virtuousness: [
+  VIRTUOUSNESS: [
     { id: 12, leftTrait: "unfaithful", rightTrait: "loyal" },
     { id: 13, leftTrait: "deceiving", rightTrait: "honest" },
     { id: 14, leftTrait: "vindictive", rightTrait: "forgiving" },
@@ -27,7 +27,7 @@ export const CATEGORIES = {
     { id: 21, leftTrait: "immoral", rightTrait: "moral" },
     { id: 22, leftTrait: "lazy", rightTrait: "hard-working" },
   ],
-  "Social Skills": [
+  SOCIAL_SKILLS: [
     { id: 23, leftTrait: "insecure", rightTrait: "confident" },
     { id: 24, leftTrait: "mean", rightTrait: "kind" },
     { id: 25, leftTrait: "negligent", rightTrait: "caring" },
@@ -43,4 +43,25 @@ export const CATEGORIES = {
     { id: 35, leftTrait: "rude", rightTrait: "polite" },
     { id: 36, leftTrait: "exploitative", rightTrait: "appreciative" },
   ],
+};
+
+export const EVALUATION_RATING = {
+  VERY_WEAK: "very weak",
+  WEAK: "weak",
+  AVERAGE: "average",
+  STRONG: "strong",
+  VERY_STRONG: "very strong",
+  TOO_NEGATIVE: "too negative",
+  NEGATIVE: "negative",
+  BALANCED: "balanced",
+  POSITIVE: "positive",
+  TOO_POSITIVE: "too positive",
+};
+
+export const SCORE_THRESHOLD = {
+  INTELLIGENCE: [9, 14, 20, 25],
+  PHYSICAL_QUALITIES: [8, 12, 17, 21],
+  VIRTUOUSNESS: [17, 28, 39, 48],
+  SOCIAL_SKILLS: [20, 29, 41, 50],
+  OVERALL: [57, 80, 109, 132],
 };
