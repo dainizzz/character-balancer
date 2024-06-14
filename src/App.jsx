@@ -1,19 +1,14 @@
 import "./App.css";
-import { CategoryCard } from "./assets/components/CategoryCard";
 import { Information } from "./assets/components/Information";
+import { CharacterForm } from "./assets/components/CharacterForm";
 
 function App() {
-  const characterName = "Insert Name";
-
   return (
     <>
       <Information />
-      <h2>{characterName}</h2>
       <button>+ Add Character</button>
-      <CategoryCard category="Intelligence" />
-      <CategoryCard category="Physical Qualities" />
-      <CategoryCard category="Virtuousness" />
-      <CategoryCard category="Social Skills" />
+      <CharacterForm />
+      <p>created by dainiz 🍓 </p>
     </>
   );
 }
