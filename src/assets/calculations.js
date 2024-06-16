@@ -18,15 +18,15 @@ const {
 export const calculateRating = (totalTraitScore, category) => {
   const { veryWeak, weak, average, strong } = SCORE_THRESHOLD[category];
   if (totalTraitScore <= veryWeak) {
-    return category === "OVERALL" ? TOO_NEGATIVE : VERY_WEAK;
+    return category === "Overall" ? TOO_NEGATIVE : VERY_WEAK;
   } else if (totalTraitScore <= weak) {
-    return category === "OVERALL" ? NEGATIVE : WEAK;
+    return category === "Overall" ? NEGATIVE : WEAK;
   } else if (totalTraitScore <= average) {
-    return category === "OVERALL" ? BALANCED : AVERAGE;
+    return category === "Overall" ? BALANCED : AVERAGE;
   } else if (totalTraitScore <= strong) {
-    return category === "OVERALL" ? POSITIVE : STRONG;
+    return category === "Overall" ? POSITIVE : STRONG;
   } else {
-    return category === "OVERALL" ? TOO_POSITIVE : VERY_STRONG;
+    return category === "Overall" ? TOO_POSITIVE : VERY_STRONG;
   }
 };
 
