@@ -1,63 +1,31 @@
-import { CATEGORIES } from "../constants";
-import { useForm } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 
-export const CategoryCard = ({ category }) => {
+export const CategoryCard = ({ displayName, traits }) => {
   const {
     register,
-    handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useFormContext();
 
-  const listItems = CATEGORIES[category].map((trait) => (
-    <tr>
-      <td>{trait["leftTrait"]}</td>
-      <td>
-        <input
-          {...register(trait["leftTrait"], { required: true })}
-          type="radio"
-          name={trait["leftTrait"]}
-          value="1"
-        ></input>
-      </td>
-      <td>
-        <input
-          {...register(trait["leftTrait"], { required: true })}
-          type="radio"
-          name={trait["leftTrait"]}
-          value="2"
-        ></input>
-      </td>
-      <td>
-        <input
-          {...register(trait["leftTrait"], { required: true })}
-          type="radio"
-          name={trait["leftTrait"]}
-          value="3"
-        ></input>
-      </td>
-      <td>
-        <input
-          {...register(trait["leftTrait"], { required: true })}
-          type="radio"
-          name={trait["leftTrait"]}
-          value="4"
-        ></input>
-      </td>
-      <td>
-        <input
-          {...register(trait["leftTrait"], { required: true })}
-          type="radio"
-          name={trait["leftTrait"]}
-          value="5"
-        ></input>
-      </td>
-      <td>{trait["rightTrait"]}</td>
+  const listItems = traits.map(({ leftTrait, rightTrait }) => (
+    <tr key={`${leftTrait}-${rightTrait}`}>
+      <td>{leftTrait}</td>
+      {[1, 2, 3, 4, 5].map((value) => (
+        <td key={value}>
+          <input
+            {...register(`${displayName}.${leftTrait}`, { required: true })}
+            type="radio"
+            name={`${displayName}.${leftTrait}`}
+            value={value.toString()}
+          ></input>
+        </td>
+      ))}
+      <td>{rightTrait}</td>
     </tr>
   ));
 
   return (
     <>
-      <h3>{category}</h3>
+      <h3>{displayName}</h3>
       <table>
         <tbody>{listItems}</tbody>
       </table>
