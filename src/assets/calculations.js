@@ -15,17 +15,28 @@ const {
 
 // TODO: Write tests for this
 
-export const calculateRating = (total, category) => {
-  const [veryWeak, weak, average, strong] = SCORE_THRESHOLD[category];
-  if (total <= veryWeak) {
+export const calculateRating = (totalTraitScore, category) => {
+  const { veryWeak, weak, average, strong } = SCORE_THRESHOLD[category];
+  if (totalTraitScore <= veryWeak) {
     return category === "OVERALL" ? TOO_NEGATIVE : VERY_WEAK;
-  } else if (total <= weak) {
+  } else if (totalTraitScore <= weak) {
     return category === "OVERALL" ? NEGATIVE : WEAK;
-  } else if (total <= average) {
+  } else if (totalTraitScore <= average) {
     return category === "OVERALL" ? BALANCED : AVERAGE;
-  } else if (total <= strong) {
+  } else if (totalTraitScore <= strong) {
     return category === "OVERALL" ? POSITIVE : STRONG;
   } else {
     return category === "OVERALL" ? TOO_POSITIVE : VERY_STRONG;
   }
+};
+
+export const getTotalTraitScore = (traits) => {
+  let total = 0;
+  let traitScores = Object.values(traits);
+
+  traitScores.forEach((score) => {
+    total += score;
+  });
+
+  return total;
 };
