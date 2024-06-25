@@ -75,9 +75,9 @@ export const EVALUATION_RATING = {
 };
 
 export const SCORE_THRESHOLD = {
-  INTELLIGENCE: { veryWeak: 9, weak: 14, average: 20, strong: 25 },
-  PHYSICAL_QUALITIES: { veryWeak: 8, weak: 12, average: 17, strong: 21 },
-  VIRTUOUSNESS: { veryWeak: 17, weak: 28, average: 39, strong: 48 },
-  SOCIAL_SKILLS: { veryWeak: 20, weak: 29, average: 41, strong: 50 },
-  OVERALL: { veryWeak: 57, weak: 80, average: 109, strong: 132 },
+  Intelligence: { veryWeak: 9, weak: 14, average: 20, strong: 25 },
+  "Physical Qualities": { veryWeak: 8, weak: 12, average: 17, strong: 21 },
+  Virtuousness: { veryWeak: 17, weak: 28, average: 39, strong: 48 },
+  "Social Skills": { veryWeak: 23, weak: 34, average: 48, strong: 59 },
+  Overall: { veryWeak: 60, weak: 84, average: 115, strong: 139 },
 };

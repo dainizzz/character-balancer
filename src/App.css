@@ -40,3 +40,17 @@
 .read-the-docs {
   color: #888;
 }
+
+.evalCard {
+  background-color: black;
+}
+
+.evalHeader {
+  background-color: blue;
+}
+
+.evalSection {
+  display: flex;
+  background-color: darkgreen;
+  justify-content: space-around;
+}

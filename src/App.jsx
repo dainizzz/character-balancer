@@ -10,7 +10,6 @@ function App() {
       <Information />
       <button>+ Add Character</button>
       <CharacterForm />
-      <Evaluation />
       <p>created by dainiz 🍓 </p>
     </CharacterContextProvider>
   );
