@@ -10,6 +10,7 @@ export const CharacterName = () => {
       <input
         {...register("characterName", { required: true, maxLength: 20 })}
         type="text"
+        defaultValue="Character Name"
       />
     </h2>
   );

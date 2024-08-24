@@ -3,7 +3,7 @@ import { CategoryCard } from "./CategoryCard";
 import { CharacterName } from "./CharacterName";
 import { Evaluation } from "./Evaluation";
 import { CATEGORIES } from "../constants";
-import { evaluateFormData, getEvaluatedFormData } from "../calculations";
+import { evaluateFormData } from "../calculations";
 import { useCharacterContext } from "../characterContext";
 import { v4 as uuidv4 } from "uuid";
 
@@ -40,15 +40,16 @@ export const CharacterForm = () => {
         <form onSubmit={methods.handleSubmit(onSubmit, onError)}>
           <div>
             <CharacterName />
-            {CATEGORIES.map(({ id, displayName, traits }) => (
-              <CategoryCard
-                key={id}
-                displayName={displayName}
-                traits={traits}
-              />
-            ))}
+            <div className="categoryContainer">
+              {CATEGORIES.map(({ id, displayName, traits }) => (
+                <CategoryCard
+                  key={id}
+                  displayName={displayName}
+                  traits={traits}
+                />
+              ))}
+            </div>
             <button type="submit">Evaluate Character</button>
-            <button>Save Draft</button>
             <button type="reset">Reset</button>
           </div>
         </form>

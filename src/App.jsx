@@ -7,7 +7,6 @@ function App() {
   return (
     <CharacterContextProvider>
       <Information />
-      <button>+ Add Character</button>
       <CharacterForm />
       <p>created by dainiz 🍓 </p>
     </CharacterContextProvider>

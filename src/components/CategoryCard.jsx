@@ -24,11 +24,12 @@ export const CategoryCard = ({ displayName, traits }) => {
   ));
 
   return (
-    <>
-      <h3>{displayName}</h3>
+    <div className="categoryCardContainer">
+      <p className="categoryHeader">{displayName}</p>
+      <br />
       <table>
         <tbody>{listItems}</tbody>
       </table>
-    </>
+    </div>
   );
 };

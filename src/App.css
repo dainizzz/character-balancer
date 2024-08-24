@@ -35,3 +35,25 @@ input:invalid {
   background-color: darkgreen;
   justify-content: space-around;
 }
+
+.instructionsButton {
+  background: none;
+  border: none;
+  padding: 0;
+  font-style: italic;
+}
+
+.instructionsButton:hover {
+  text-decoration: underline;
+}
+
+.categoryContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.categoryCardContainer {
+  display: flex;
+  flex-flow: column nowrap;
+}
