@@ -1,7 +1,6 @@
 import "./App.css";
-import { Information } from "./assets/components/Information";
-import { CharacterForm } from "./assets/components/CharacterForm";
-import { Evaluation } from "./assets/components/Evaluation";
+import { Information } from "./components/Information";
+import { CharacterForm } from "./components/CharacterForm";
 import { CharacterContextProvider } from "./characterContext";
 
 function App() {

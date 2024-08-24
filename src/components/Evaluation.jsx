@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useCharacterContext } from "../../characterContext";
+import { useCharacterContext } from "../characterContext";
 
 export const Evaluation = () => {
   const { characters, currentCharacterId, showEvaluation } =
@@ -19,7 +18,7 @@ export const Evaluation = () => {
 
   // TODO: Figure out why this runs multiple times on submit
   if (showEvaluation) {
-    console.log({ showEvaluation });
+    console.log({ characters });
     characterInfo = characters.find(
       (character) => character.id === currentCharacterId
     );

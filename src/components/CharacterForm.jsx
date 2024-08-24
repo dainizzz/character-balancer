@@ -4,7 +4,7 @@ import { CharacterName } from "./CharacterName";
 import { Evaluation } from "./Evaluation";
 import { CATEGORIES } from "../constants";
 import { evaluateFormData, getEvaluatedFormData } from "../calculations";
-import { useCharacterContext } from "../../characterContext";
+import { useCharacterContext } from "../characterContext";
 import { v4 as uuidv4 } from "uuid";
 
 export const CharacterForm = () => {
