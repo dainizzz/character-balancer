@@ -1,5 +1,7 @@
 import { useContext, createContext, useState } from "react";
 
+// Note: This will be utilized in the second phase of development
+
 export const defaultState = {
   currentCharacterId: "",
   characters: [],
