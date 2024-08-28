@@ -7,10 +7,10 @@ export const CharacterName = () => {
   } = useFormContext({ defaultValues: { characterName: "Character Name" } });
   return (
     <h2 className="curCharName">
+      Character Name:
       <input
         {...register("characterName", { required: true, maxLength: 20 })}
         type="text"
-        defaultValue="Character Name"
       />
     </h2>
   );

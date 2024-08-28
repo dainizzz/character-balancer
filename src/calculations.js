@@ -13,8 +13,6 @@ const {
   TOO_POSITIVE,
 } = EVALUATION_RATING;
 
-// TODO: Write tests for this
-
 export const calculateRating = (totalTraitScore, category) => {
   const { veryWeak, weak, average, strong } = SCORE_THRESHOLD[category];
   if (totalTraitScore <= veryWeak) {
@@ -80,42 +78,33 @@ export const getScoreAndRating = (data, category) => {
   return { score, rating };
 };
 
-export const getEvaluatedFormData = (data) => {
+export const setGraphData = (data) => {
   return Object.values(categories).reduce((acc, cur) => {
+    const category = categoryKeyMap[cur].score;
+    return [...acc, { attribute: cur, score: data[category] }];
+  }, []);
+};
+
+export const getEvaluatedFormData = (data) => {
+  const evaluatedData = Object.values(categories).reduce((acc, cur) => {
     const { score, rating } = getScoreAndRating(data, cur);
     const { rating: ratingKey, score: scoreKey } = categoryKeyMap[cur];
 
     return { ...acc, [ratingKey]: rating, [scoreKey]: score };
   }, {});
-};
 
-// TODO: Rewrite this w/ mapping 🤪
-export const evaluateFormData = (data) => {
-  const intelligenceScore = getTotalTraitScore(data["Intelligence"]);
-  const physicalScore = getTotalTraitScore(data["Physical Qualities"]);
-  const socialScore = getTotalTraitScore(data["Social Skills"]);
-  const virtuousnessScore = getTotalTraitScore(data["Virtuousness"]);
-  const overallScore =
-    intelligenceScore + physicalScore + socialScore + virtuousnessScore;
+  evaluatedData["overallScore"] =
+    evaluatedData["intelligenceScore"] +
+    evaluatedData["physicalScore"] +
+    evaluatedData["socialScore"] +
+    evaluatedData["virtuousnessScore"];
 
-  const intelligenceRating = calculateRating(intelligenceScore, "Intelligence");
-  const physicalRating = calculateRating(physicalScore, "Physical Qualities");
-  const socialRating = calculateRating(socialScore, "Social Skills");
-  const virtuousnessRating = calculateRating(virtuousnessScore, "Virtuousness");
-  const overallRating = calculateRating(overallScore, "Overall");
+  evaluatedData["overallRating"] = calculateRating(
+    evaluatedData.overallScore,
+    "Overall"
+  );
 
-  const evaluation = {
-    intelligenceScore,
-    intelligenceRating,
-    physicalScore,
-    physicalRating,
-    socialScore,
-    socialRating,
-    virtuousnessScore,
-    virtuousnessRating,
-    overallScore,
-    overallRating,
-  };
+  evaluatedData.graphData = setGraphData(evaluatedData);
 
-  return evaluation;
+  return evaluatedData;
 };

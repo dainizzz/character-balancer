@@ -57,3 +57,19 @@ input:invalid {
   display: flex;
   flex-flow: column nowrap;
 }
+
+.evaluationContainer {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.textEvaluation {
+  grid-column: 1 / 2;
+  background-color: peru;
+}
+
+.graphEvaluation {
+  grid-column: 2 / 4;
+  background-color: pink;
+  height: 100%;
+}

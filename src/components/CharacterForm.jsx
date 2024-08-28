@@ -3,36 +3,26 @@ import { CategoryCard } from "./CategoryCard";
 import { CharacterName } from "./CharacterName";
 import { Evaluation } from "./Evaluation";
 import { CATEGORIES } from "../constants";
-import { evaluateFormData } from "../calculations";
+import { getEvaluatedFormData } from "../calculations";
 import { useCharacterContext } from "../characterContext";
-import { v4 as uuidv4 } from "uuid";
 
 export const CharacterForm = () => {
-  const {
-    characters,
-    setCharacters,
-    currentCharacterId,
-    setCurrentCharacterId,
-    setShowEvaluation,
-  } = useCharacterContext();
+  const { setCharacterData, setShowEvaluation } = useCharacterContext();
 
   const methods = useForm();
   const onSubmit = (data, e) => {
-    const characterId = uuidv4();
-    setCurrentCharacterId(characterId);
-    const evaluatedData = evaluateFormData(data);
-    setCharacters([
-      ...characters,
-      {
-        id: characterId,
-        evaluation: evaluatedData,
-        scores: data,
-      },
-    ]);
+    const evaluatedData = getEvaluatedFormData(data);
+    setCharacterData({
+      evaluation: evaluatedData,
+      scores: data,
+    });
     setShowEvaluation(true);
-    console.log({ evaluatedData, characters, currentCharacterId });
   };
   const onError = (errors, e) => console.log(errors, e);
+
+  const onReset = () => {
+    setShowEvaluation(false);
+  };
 
   return (
     <div>
