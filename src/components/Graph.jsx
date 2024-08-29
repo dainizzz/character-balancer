@@ -1,19 +1,30 @@
 import { ResponsiveRadar } from "@nivo/radar";
 import { useCharacterContext } from "../characterContext";
 
+const theme = {
+  text: {
+    fontSize: 16,
+    fill: "#ffffff",
+  },
+  tooltip: {
+    container: {
+      background: "#000000",
+    },
+  },
+};
+
 export const Graph = () => {
   const { characterData } = useCharacterContext();
 
   const data = characterData?.evaluation?.graphData ?? [];
-  console.log(data);
-  console.log(characterData);
 
   return (
     <ResponsiveRadar
       data={data}
       keys={["score"]}
       indexBy="attribute"
-      margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
+      margin={{ top: 80, right: 180, bottom: 80, left: 180 }}
+      theme={theme}
     />
   );
 };

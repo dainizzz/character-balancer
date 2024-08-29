@@ -1,10 +1,7 @@
 import { useFormContext } from "react-hook-form";
 
 export const CategoryCard = ({ displayName, traits }) => {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
+  const { register } = useFormContext();
 
   const listItems = traits.map(({ leftTrait, rightTrait }) => (
     <tr key={`${leftTrait}-${rightTrait}`}>

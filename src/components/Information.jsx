@@ -23,7 +23,7 @@ export const Information = () => {
     <div>
       <h1>{header}</h1>
       {!isShown ? null : (
-        <p>
+        <p className="instructionsText">
           {prependText}
           <br /> {instructions}
         </p>

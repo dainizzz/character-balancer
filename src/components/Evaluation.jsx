@@ -16,16 +16,16 @@ export const Evaluation = () => {
 
   if (showEvaluation) {
     evaluation = evaluationCategories.map(({ heading, key }) => (
-      <div className="evalCard" key={key}>
+      <div key={key}>
         <h3 className="evalHeader">{heading}</h3>
         <div className="evalSection">
           <p>
-            Score
+            <h4>Score</h4>
             <br />
             {characterData?.evaluation[`${key}Score`]}
           </p>
           <p>
-            Rating
+            <h4>Rating</h4>
             <br />
             {characterData?.evaluation[`${key}Rating`]}
           </p>

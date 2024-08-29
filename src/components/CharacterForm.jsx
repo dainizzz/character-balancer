@@ -10,7 +10,7 @@ export const CharacterForm = () => {
   const { setCharacterData, setShowEvaluation } = useCharacterContext();
 
   const methods = useForm();
-  const onSubmit = (data, e) => {
+  const onSubmit = (data) => {
     const evaluatedData = getEvaluatedFormData(data);
     setCharacterData({
       evaluation: evaluatedData,
@@ -20,7 +20,7 @@ export const CharacterForm = () => {
   };
   const onError = (errors, e) => console.log(errors, e);
 
-  const onReset = () => {
+  const handleReset = () => {
     setShowEvaluation(false);
   };
 
@@ -40,7 +40,9 @@ export const CharacterForm = () => {
               ))}
             </div>
             <button type="submit">Evaluate Character</button>
-            <button type="reset">Reset</button>
+            <button type="reset" onClick={handleReset}>
+              Reset
+            </button>
           </div>
         </form>
       </FormProvider>
