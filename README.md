@@ -1,3 +1,4 @@
+#Character Balancer
 ## About
 Character Balancer is a tool that helps users create more interesting characters by objectively evaluating the character in four areas: intelligence, physical qualties, social skills, and virtuousness. 
 ## How It Works
