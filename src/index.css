@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #2f2f42;
+  background-image: linear-gradient(135deg, #2a2659 5%, #00091e 100%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -42,13 +42,14 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #0c0a3a;
+  background-color: #3e3e5f;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin: 0px 5px;
 }
 button:hover {
-  border-color: #646cff;
-  background-color: #8a90fb;
+  border-color: #f8bf78;
+  background-color: #a58671;
 }
 button:focus,
 button:focus-visible {

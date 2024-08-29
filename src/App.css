@@ -20,8 +20,9 @@ input:invalid {
 
 h1 {
   text-transform: uppercase;
-  background-color: #14143d;
+  background-color: #0d0d2f;
   padding: 4px 0px 8px;
+  margin-bottom: 4px;
 }
 
 h4 {
@@ -35,7 +36,7 @@ h4 {
 
 .nameField {
   margin-left: 10px;
-  background-color: #404040;
+  background-color: #3e3d5a;
 }
 
 .evalHeader {
@@ -49,6 +50,7 @@ h4 {
   display: flex;
   justify-content: space-around;
   text-transform: capitalize;
+  padding: 10px 0px 10px;
 }
 
 .instructionsButton {
@@ -74,7 +76,8 @@ h4 {
   display: flex;
   flex-flow: column nowrap;
   padding: 4px 2px;
-  background-color: #14143d;
+  background-color: #0d0d2f;
+  border-radius: 8%;
 }
 
 .categoryHeader {
@@ -85,7 +88,7 @@ h4 {
   display: grid;
   grid-template-columns: 33% 33% 33%;
   margin-top: 20px;
-  background-color: #14143d;
+  background-color: #0d0d2f;
   padding: 0px 20px 20px 20px;
 }
 
@@ -100,4 +103,7 @@ h4 {
 
 .instructionsText {
   font-size: 1.1rem;
+  background-color: #0d0d2f;
+  padding: 4px;
+  margin-bottom: 1px;
 }
