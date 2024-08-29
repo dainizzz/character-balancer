@@ -19,16 +19,16 @@ export const Evaluation = () => {
       <div key={key}>
         <h3 className="evalHeader">{heading}</h3>
         <div className="evalSection">
-          <p>
+          <div>
             <h4>Score</h4>
             <br />
             {characterData?.evaluation[`${key}Score`]}
-          </p>
-          <p>
+          </div>
+          <div>
             <h4>Rating</h4>
             <br />
             {characterData?.evaluation[`${key}Rating`]}
-          </p>
+          </div>
         </div>
       </div>
     ));

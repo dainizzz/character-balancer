@@ -23,7 +23,7 @@ export const Graph = () => {
       data={data}
       keys={["score"]}
       indexBy="attribute"
-      margin={{ top: 80, right: 180, bottom: 80, left: 180 }}
+      margin={{ top: 82, right: 180, bottom: 80, left: 180 }}
       theme={theme}
     />
   );

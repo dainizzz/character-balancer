@@ -10,7 +10,7 @@ export const CharacterForm = () => {
   const { setCharacterData, setShowEvaluation } = useCharacterContext();
 
   const methods = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
     const evaluatedData = getEvaluatedFormData(data);
     setCharacterData({
       evaluation: evaluatedData,

@@ -1,4 +1,4 @@
-import { EVALUATION_RATING, SCORE_THRESHOLD } from "./constants";
+import { EVALUATION_RATING, SCORE_THRESHOLD, MAX_SCORES } from "./constants";
 
 const {
   VERY_WEAK,
@@ -78,10 +78,15 @@ export const getScoreAndRating = (data, category) => {
   return { score, rating };
 };
 
+export const getPercentScore = (score, category) => {
+  return score / MAX_SCORES[category];
+};
+
 export const setGraphData = (data) => {
   return Object.values(categories).reduce((acc, cur) => {
     const category = categoryKeyMap[cur].score;
-    return [...acc, { attribute: cur, score: data[category] }];
+    const score = getPercentScore(data[category], cur);
+    return [...acc, { attribute: cur, score: score }];
   }, []);
 };
 

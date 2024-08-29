@@ -81,3 +81,11 @@ export const SCORE_THRESHOLD = {
   "Social Skills": { veryWeak: 23, weak: 34, average: 48, strong: 59 },
   Overall: { veryWeak: 60, weak: 84, average: 115, strong: 139 },
 };
+
+export const MAX_SCORES = {
+  Intelligence: 30,
+  "Physical Qualities": 25,
+  "Social Skills": 70,
+  Virtuousness: 55,
+  Overall: 180,
+};
